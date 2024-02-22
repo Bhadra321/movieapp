@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</html>
+{% extends 'base.html' %}
+{% block body %}
+<div class="container ">
+    <div class="row">
+        <div class="col-md-5">
+            <img src="{{movie.img.url}}" width="300" height="400">
+        </div>
+        <div class="col-md-3 " height="100%" width="100%">
+           <h5> {{movie.title}}</h5><br>
+            {{movie.year}}<br>
+            {{movie.desc}}<br>
+            <a class="btn btn-primary" href="{% url 'update' movie.id %}" role="button" >update</a>
+            <a class="btn btn-primary" href="{% url 'delete' movie.id %}" role="button">delete</a><br>
+
+            
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+</body>
+
+</html>
